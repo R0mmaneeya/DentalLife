@@ -1,0 +1,126 @@
+.boxAccordion{
+    display: flex;
+    flex-direction: column-reverse;
+    font-weight: bold;
+    width: 555px;
+    font-size: 15px;
+    margin-bottom: -10px;
+    
+}
+
+p .row{
+    border: solid 1.5px #22668D;
+    background: #ffffff;
+    width: 550px;
+    border-radius: 20px;
+    margin-top: 5px;
+    display: flex;
+    color: #22668D;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 8px;
+    align-items: center;
+    z-index: 99;
+    
+}
+
+
+.boxAccordion .date{
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    width: 130px;
+}
+.boxAccordion .time{
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+    width: 100px;
+}
+
+.boxAccordion .place{
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+    width: 160px;
+}
+
+.boxAccordion .status{
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+    width: 30px;
+}
+
+.row .according{
+    height: 25px;
+    margin-left: 55px;
+    cursor: pointer;
+}
+
+p .Treatment{
+    font-size: 12px;
+    display: flex;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+p .Treatment .treatment{
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+    width: 210px;
+}
+
+p .Treatment .docter{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    width: 200px;
+}
+
+p .Treatment .place{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.totalValue{
+    display: flex;
+    font-size: 12px;
+}
+
+.totalValue .total{
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    width: 410px;    
+}
+
+.totalValue .value{
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+}
+
+.content{
+    overflow: hidden;/*ซ่อนเนื้อหา*/
+    max-height: 0;   
+    
+}
+
+ .content.show{
+    height: auto;
+    max-height: 9999px;
+    transition: transform 1s ease-in-out;
+    border-bottom: solid 1.5px #22668D;
+    border-left: solid 1.5px #22668D;
+    border-right: solid 1.5px #22668D;
+    margin-top: -30px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    width: 550px;
+    border-radius: 0 0 15px 15px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}  

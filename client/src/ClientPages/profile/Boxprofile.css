@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap');
+body{
+    font-family: 'Monda', sans-serif;
+}
+
+
+li{
+    list-style: none;/*ทำให้จุดที่เกิดจากliหายไป*/
+}
+
+html{
+    font-size: calc(60% + 0.8vmin);/*ย่อตามขนาดหน้าจอ*/
+}
+
+a{
+    text-decoration: none;
+}
+
+.boxprofile{
+    width: 280px;
+    height: 380px;
+    background: #fdfdfd;
+    border-radius: 40px;
+    box-shadow: 0 2px 2px 1px rgba(159, 162, 177, 0.8);/*เงา*/
+}
+
+.flexin{
+    display: inline;
+}
+
+.flexin img{
+    width: auto;
+    height: 100px;
+    border-radius: 80px;
+    margin-top: 20px;
+}
+
+p{
+    margin-left: 25px;
+    color: #769FCD;
+    font-size: 13.5px;
+}
+
+.editInformation{
+    background: #F1C376;
+    display: flex;/*30-32ทำให้อยู่ตรงกลาง*/
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 30px;
+    font-size: 15px;
+    color: #fdfdfd;
+    border-radius: 30px;
+}
