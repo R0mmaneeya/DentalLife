@@ -1,4 +1,4 @@
-.buttonchange{
+.buttonchangedoc{
     position: absolute;
     height: 35px;
     width: 70px;
@@ -9,29 +9,29 @@
     border: none;
 }
 
-.buttonchange:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
+.buttonchangedoc:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
     transform: scale(0.995);/*ย่อเมื่อเมาส์วางดูรูปแบบจากtiktok*/   
 
 }
 
-.buttonchange:active {/*ดักจับเหต์การเมื่อเอาเมาส์กด*/
+.buttonchangedoc:active {/*ดักจับเหต์การเมื่อเอาเมาส์กด*/
     transform: scale(0.995);
   }
 
-.circle{
+.buttonchangedoc .circle{
     position: relative;
     height: 28px;
     width: 28px;
-    left: 30px;
-    top: 2px;
+    left: 5px;
+    top: 3px;
     background: #A0C49D;
     border-radius: 50px;
 }
 
-.buttonchange p{
+.buttonchangedoc p{
     position: relative;
-    top: -32px;
-    left: -15px;
+    top: -23px;
+    left: 3px;
     color: #A0C49D;
 }
 

@@ -18,7 +18,7 @@ a{
 
 
 
-.box{
+.BoxPatient .box{
     position: relative;
     display: block;
     background: #ffffff;
@@ -29,17 +29,17 @@ a{
     border: 0;
 }
 
-button.box:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
+.BoxPatient button.box:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
     transform: scale(0.995);/*ย่อเมื่อเมาส์วางดูรูปแบบจากtiktok*/   
 
 }
 
-button.box:active {/*ดักจับเหต์การเมื่อกด*/
+.BoxPatient button.box:active {/*ดักจับเหต์การเมื่อกด*/
     background-color: #f8d89c;
     transform: scale(0.995);
   }
 
-.edit{
+  .BoxPatient .edit{
     position: absolute;
     color: #ffffff;
     display: flex;/*30-32ทำให้อยู่ตรงกลาง*/
@@ -53,28 +53,28 @@ button.box:active {/*ดักจับเหต์การเมื่อก�
     border: 0;
 }
 
-.edit:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
+.BoxPatient .edit:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
     transform: scale(0.995);/*ย่อเมื่อเมาส์วางดูรูปแบบจากtiktok*/   
 
 }
 
-.edit:active {/*ดักจับเหต์การเมื่อกด*/
+.BoxPatient .edit:active {/*ดักจับเหต์การเมื่อกด*/
     background-color: #f0d4a0;
     transform: scale(0.995);
   }
 
- .imgpatient{
+  .BoxPatient .imgpatient{
     width: 80px;
     margin:20px 0px 0px 20px;
     border-radius: 50px;
 }
 
-.plus{
+.BoxPatient .box .plus{
     width: 80px;
     height: auto;
 }
 
-h5{
+.BoxPatient h5{
     color: #F7931E;
     position: absolute;
     font-size: 10px;
@@ -82,7 +82,7 @@ h5{
     left: 120px;
 }
 
-h6{
+.BoxPatient h6{
     color: #F7931E;
     position: absolute;
     font-size: 10px;

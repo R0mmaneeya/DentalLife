@@ -6,13 +6,12 @@ import Tabbar from '../Home/Tabbar';
 export default function Profile() {
   
   return (
-  <>
+  <div className='profile'>
   <Tabbar/>
   <div className='flex'>
     <Boxprofile/>
     <BoxAPMhis/>
   </div>
-  
-  </>
+  </div>
   )
 }

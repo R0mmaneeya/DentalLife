@@ -1,26 +1,28 @@
-.boxAPM{
+.boxflex  .boxAPM{
     background: #fffdfd;
     display: flex;
     width: 600px;
     height: 340px;
     border-radius: 30px;
+    padding-left: 35px;
+    padding-bottom: 10px;
     box-shadow: 0 3px 4px 1px rgba(159, 162, 177, 0.8);/*เงา*/
 
 }
 
-.boxAPM p{
+.boxflex .boxAPM p{
     display: inline;
     overflow: auto;
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-.boxAPM p .flex{
+.boxflex .boxAPM p .flex{
     display: inline;
-    top: 0;
+    top: 5px;
     left: -5px;
 }
 
-.p{
+.boxflex .p{
     position: relative;
     display: inline-flex;
     font-size: 20px;
@@ -30,7 +32,7 @@
     /* overflow: hidden; */
 }
 
-.addnew{
+.boxflex .addnew{
     font-size: 14px;
     width: 120px;
     height: 22px;
@@ -45,7 +47,7 @@
 
 }
 
-.section{
+.boxflex .section{
     display: flex;
     margin-top: 15px;
     margin-left: 25px;
@@ -55,14 +57,14 @@
     color: #4682A9;
 }
 
-.section .t{
+.boxflex.section .t{
     margin-left: 95px;
 }
 
-.section .pl{
+.boxflex .section .pl{
     margin-left: 68px;
 }
 
-.section .s{
+.boxflex .section .s{
     margin-left: 115px;
 }

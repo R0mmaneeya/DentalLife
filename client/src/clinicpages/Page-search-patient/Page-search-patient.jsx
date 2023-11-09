@@ -1,28 +1,25 @@
 import React,{useState} from 'react';
-import './App.css';
-import Boxpatient from './Boxpatient.js';
-import dataPatients from './dataPatients.js';
-import Null from './Null.js';
-import Tabbarclinic from './Tabbarclinic.js';
-import Buttonchange from './Buttonchange.js';
+import './Page-search-patient.css';
+import Boxpatient from './Boxpatient';
+import dataPatients from './dataPatients';
+import Null from './Null.jsx';
+import Buttonchange from './Buttonchange';
 
 
 
-function App() {
+function Pagesearchpa() {
   const [searchText, setSearchText] = useState('');
 
   const filterpatient = dataPatients.filter((dataPatient) => {
     return dataPatient.dataname.includes(searchText)
   });
   
-  // เอาข้อมูลอาเรย์มาใช้ สามารถแยกใส่ข้อมูลjsได้เลย
   const dataPatientsElements = filterpatient.map((dataPatient,index) => {
     return <Boxpatient key={index} dataPatient={dataPatient}/>
   });
 
   return (
-    <>
-      <Tabbarclinic/>
+    <div className='Pagesearchpa'>
       <Buttonchange/>
     
       <center>
@@ -46,8 +43,8 @@ function App() {
 
       
 
-    </>
+    </div>
   );
 }
 
-export default App;
+export default Pagesearchpa;

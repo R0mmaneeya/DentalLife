@@ -1,14 +1,11 @@
 import "./Register.css";
-// import logo from "./component/logo.png";
-// import findUs from "./component/findUs.svg";
-// import Profile from "./component/profile.svg";
-// import call from "./component/call.svg";
-// import calendar from "./component/calandar.svg";
 import React, { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import home from "/images-login/home.svg";
+import { useNavigate } from "react-router-dom";
 export default function Register() {
+  const navigate = useNavigate();
   const [passwordShown, setPasswordShown] = useState(false);
   const [password, setPassword] = useState("");
   const [password1, setPassword1] = useState("");
@@ -28,7 +25,6 @@ export default function Register() {
   };
   return (
     <div className="app">
-      
       <div className="createApp">
         <h1>CREATE NEW ACCOUNT</h1>
         <div className="form1">
@@ -151,7 +147,16 @@ export default function Register() {
             </div>
           </form>
         </div>
-        <button className="btn">Sign up</button>
+
+        <button
+          className="signUpbtn"
+          onClick={() => {
+            navigate("/ClientLogin");
+          }}
+        >
+          Sign up
+        </button>
+
         <ul>
           <span className="bottomClick">
             <li>LOG IN</li>

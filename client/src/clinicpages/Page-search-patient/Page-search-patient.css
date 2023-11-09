@@ -16,7 +16,7 @@ a{
     text-decoration: none;
 }
 
-.app-grid{
+.Pagesearchpa .app-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 16px;
@@ -29,7 +29,7 @@ a{
 
 
 /*ช่องค้นหา*/
-input{
+.Pagesearchpa input{
     position: relative;
     background: #F6F5F5;
     inline-size: 500px;
@@ -41,19 +41,19 @@ input{
 
 }
 
-input:focus {
+.Pagesearchpa input:focus {
     outline: none; /* ลบเส้นขอบ */
 }
 
-input:not(:placeholder-shown) {
+.Pagesearchpa input:not(:placeholder-shown) {
     padding-left: 20px; /* เมื่อมีข้อมูลอยู่ใน input ให้ตัวอักษรห่างจากด้านซ้าย 20px */
 }
 
-input:placeholder-shown{
+.Pagesearchpa input:placeholder-shown{
     color: #F1C376;
 }
 
-.app-search img{
+.Pagesearchpa .app-search img{
     position: absolute;
     right: 22rem;
     top: 10.7rem;
@@ -61,7 +61,7 @@ input:placeholder-shown{
     width: auto;
 }
 
-div.app-search button{
+.Pagesearchpa div.app-search button{
     position: absolute;
     display: block;
     background: #F1C376;
@@ -72,17 +72,17 @@ div.app-search button{
     border: 0;
 }
 
-div.app-search button:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
+.Pagesearchpa div.app-search button:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
     transform: scale(0.995);/*ย่อเมื่อเมาส์วางดูรูปแบบจากtiktok*/   
 
 }
 
-div.app-search button:active {/*ดักจับเหต์การเมื่อเอาเมาส์กด*/
+.Pagesearchpa div.app-search button:active {/*ดักจับเหต์การเมื่อเอาเมาส์กด*/
     background-color: #a6d1a0;
     transform: scale(0.995);
   }
 
-div.app-search button img{
+  .Pagesearchpa div.app-search button img{
     position: absolute;
     border-radius: 20px;
     border: 0;

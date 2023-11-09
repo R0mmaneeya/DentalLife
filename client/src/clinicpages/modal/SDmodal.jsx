@@ -9,6 +9,7 @@ const timenotavailable = {
 }
 
 function SDmodal({setOpenClinicModal}) {
+
     return (
         <div className="modalBackground ">
             <div
@@ -36,7 +37,7 @@ function SDmodal({setOpenClinicModal}) {
                 </div>
                 
                 <div className="footer">
-                    <button style={{ backgroundColor: "#94B49F" }} id="doneBtn" >
+                    <button style={{ backgroundColor: "#94B49F" }} id="doneBtn"  >
                         Done
                     </button>
                 </div>

@@ -19,19 +19,20 @@
     transform: scale(0.995);
   }
 
-.circle{
+.buttonchange .circle{
     position: relative;
     height: 28px;
     width: 28px;
-    top: 2px;
-    background: #A0C49D;
+    top: 3.5px;
+    left: 5px;
+    background: #F7D08A;
     border-radius: 50px;
 }
 
 .buttonchange p{
     position: relative;
-    top: -32px;
-    left: 15px;
-    color: #A0C49D;
+    top: -23px;
+    left: 5px;
+    color: #F7D08A;
 }
 

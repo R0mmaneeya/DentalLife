@@ -4,7 +4,7 @@
 }
 
 
-li{
+.manu li{
     list-style: none;/*ทำให้จุดที่เกิดจากliหายไป*/
 }
 
@@ -12,7 +12,8 @@ html{
     font-size: calc(60% + 0.8vmin);/*ย่อตามขนาดหน้าจอ*/
 }
 
-a{
+
+.manu a{
     text-decoration: none;
 }
 

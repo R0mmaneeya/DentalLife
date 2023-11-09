@@ -1,9 +1,14 @@
 import './Boxdentiss.css'
-function Null(){
-    return(
-        <button className='box'>
-            <center><img className='plus'src='imagdentis\plus.svg'/></center> {/*ใส่ฟังชั่นทีหลัง*/}
-        </button>
+import { Link } from 'react-router-dom';
+function Null() {
+    return (
+        <div className='BoxDentiss'>
+            <Link to="/SearchDoc/EditDoc">
+                <button className='box'>
+                    <center><img className='plus' src='imagdentis\plus.svg' /></center> {/*ใส่ฟังชั่นทีหลัง*/}
+                </button>
+            </Link>
+        </div>
     )
 }
 export default Null;

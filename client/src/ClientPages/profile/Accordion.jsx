@@ -25,7 +25,7 @@ function Accordion(){
                             <div className='time'>{item.time}</div>
                             <div className='place'>{item.place}</div>
                             <div className='status'>{item.status}</div>
-                            <img className='according' src='assets/accordion.png' alt='accordion'></img>
+                            <img className='according' src='assets/accordion.png' alt='accordion'/>
                         </p>
                         <div className={selected == i ? 'content show' : 'content'}>
                         {datatreatment.map((itemtreatment, j) => (

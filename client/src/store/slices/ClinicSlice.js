@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 //initial Data clinic
 const initialState={
     id:[],
-    name:["slfjls", "skdjfklj"],
+    name:["slfjls", "skdjfklj","dsifjdskj"],
     branchOfClinic:[],
     imageClinic:[],
     idDentist:[],

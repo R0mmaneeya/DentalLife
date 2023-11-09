@@ -1,53 +1,39 @@
 *{
   font-family: 'Monda', sans-serif;
 }
-
-
-li{
-  list-style: none;/*ทำให้จุดที่เกิดจากliหายไป*/
-}
-
-html{
-  font-size: calc(60% + 0.8vmin);/*ย่อตามขนาดหน้าจอ*/
-}
-
-a{
-  text-decoration: none;
-}
 .app{
   background-image: url(/images-login/bg.svg);
-  width:100vw;
-  height: 100vh;
-  display: flex;
+  width:100%;
+  height: 100%;
+  display:flex;
   justify-content:center;
 }
 .createApp {
   color: #769FCD;
+  padding: 30px;
   border-radius: 5%;
-  margin-top: 9%;
+  margin-top: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-bottom: 4% ;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   background: rgba(255, 255, 255, 0.616); /*ตรงนี้ใช้สีแดงไปก่อน มันจะได้เห็นชัดแล้วค่อยเปลี่ยนเป็นสีขาว*/
-  width: 70vw;
-  height: 75vh;
 }
 
 .form1 {
-  padding: 10px;
   display: flex;
+  padding: 10px;
 }
-
-.formleft {
+.formleft{
   margin-right: 10px;
 }
-
-.formright {
+.formRight{
   margin-left: 10px;
 }
-
-.btn {
+.signUpbtn {
   background-color: #769FCD;
   border: 0 ;
   color: #ffffff;
@@ -58,10 +44,12 @@ a{
   border-radius: 15px;
   padding: 10px;
 }
-
-input{
+.column-name-text label,.name-text label,.password-input label{
+  margin-left: 5px;
+}
+.column-name-text input,.name-text input,.password-input input{
   border-radius: 20px;
-  padding : 10px;
+  padding : 15px;
 }
 .bottomClick li{
   display: inline-block;

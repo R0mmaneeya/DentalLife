@@ -16,7 +16,7 @@ a{
     text-decoration: none;
 }
 
-.flex{
+.profile .flex{
   position: relative;
   top: 7rem;
   display: flex;

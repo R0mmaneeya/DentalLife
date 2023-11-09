@@ -15,7 +15,7 @@ function Boxprofile(){
                     <div>Height :</div>
                     <div>Tel :</div>
                 </p>
-                <center><div className='editInformation'>EDIT INFORMATION</div></center>
+                {/* <center><div className='editInformation'>EDIT INFORMATION</div></center> */}
             </div>
         </div>
     )
