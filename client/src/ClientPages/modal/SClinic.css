@@ -70,11 +70,9 @@
     overflow: hidden;
     display: none;
     max-height: 0;
-    /* Initial height set to 0 */
     overflow-y: auto;
     z-index: 9;
     transition: max-height 0.5s ease;
-    /* Add animation for max-height */
 }
 
 /* Dropdown menu items */

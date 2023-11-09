@@ -1,25 +1,12 @@
 .boxflex  .boxAPM{
     background: #fffdfd;
-    display: flex;
     width: 600px;
-    height: 340px;
+    max-height: 340px;
     border-radius: 30px;
-    padding-left: 35px;
-    padding-bottom: 10px;
-    box-shadow: 0 3px 4px 1px rgba(159, 162, 177, 0.8);/*เงา*/
-
-}
-
-.boxflex .boxAPM p{
-    display: inline;
+    padding: 10px;
+    box-shadow: 0 3px 4px 1px rgba(159, 162, 177, 0.8);
     overflow: auto;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-}
-
-.boxflex .boxAPM p .flex{
-    display: inline;
-    top: 5px;
-    left: -5px;
+    overflow-x: hidden;
 }
 
 .boxflex .p{
@@ -29,7 +16,6 @@
     color: #4682A9;
     margin-bottom: 5px;
     font-weight: bold;
-    /* overflow: hidden; */
 }
 
 .boxflex .addnew{
@@ -48,8 +34,8 @@
 }
 
 .boxflex .section{
-    display: flex;
-    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     margin-left: 25px;
     font-size: 15px;
     font-weight: 100;
@@ -57,14 +43,3 @@
     color: #4682A9;
 }
 
-.boxflex.section .t{
-    margin-left: 95px;
-}
-
-.boxflex .section .pl{
-    margin-left: 68px;
-}
-
-.boxflex .section .s{
-    margin-left: 115px;
-}

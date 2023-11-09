@@ -5,16 +5,14 @@ function Boxprofile(){
         <div className='boxprofile'>
             <div className='flexin'>
                 <center><img src='imagp\p6.jpg'/></center>
-                <p>
-                    <div>Number An :</div>
-                    <div>Name :</div>
-                    <div>Lastname :</div>
-                    <div>Date of birth :</div>
-                    <div>Sex :</div>
-                    <div>Weight :</div>
-                    <div>Height :</div>
-                    <div>Tel :</div>
-                </p>
+                    <p>Number An :</p>
+                    <p>Lastname :</p>
+                    <p>Name :</p>
+                    <p>Date of birth :</p>
+                    <p>Sex :</p>
+                    <p>Weight :</p>
+                    <p>Height :</p>
+                    <p>Tel :</p>
                 {/* <center><div className='editInformation'>EDIT INFORMATION</div></center> */}
             </div>
         </div>

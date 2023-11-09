@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Profile from "./ClientPages/profile/Profile.jsx";
 import Login_main from "./components/page-login/Login_main.jsx";
 import Register from "./components/pageRegis/Register.jsx";

@@ -3,48 +3,42 @@ import './Accordion.css';
 
 
 
-function Accordion(){
-
+function Accordion() {
     const [selected, setSelected] = useState(null)
-
     const toggle = (i) => {
-        if (selected == i){
+        if (selected == i) {
             return setSelected(null)
         }
         setSelected(i)
     }
-
-    return(
+    return (
         <>
-            
-                {dataInAccordion.map((item, i) => (
-                    <div className="boxAccordion">
+            {dataInAccordion.map((item, i) => (
+                <div className="boxAccordion">
                     <div key={i}>
-                        <p className='row' onClick={() => toggle(i)}>
+                        <div className='row' onClick={() => toggle(i)}>
                             <div className='date'>{item.date}</div>
                             <div className='time'>{item.time}</div>
                             <div className='place'>{item.place}</div>
                             <div className='status'>{item.status}</div>
-                            <img className='according' src='assets/accordion.png' alt='accordion'/>
-                        </p>
-                        <div className={selected == i ? 'content show' : 'content'}>
-                        {datatreatment.map((itemtreatment, j) => (
-                            <p key={j} className='Treatment'>
-                                <div className='treatment'>{itemtreatment.treatment}</div>
-                                <div className='docter'>{itemtreatment.docter}</div>
-                                <div className='plice'>{itemtreatment.plice}</div>
-                            </p>
-                        ))}
-                        <p className='totalValue'>
-                            <div className='total'>Total value</div>
-                            <div className='value'>1,500</div>
-                        </p>
+                            <img className='according' src='assets/accordion.png' alt='accordion' />
                         </div>
-                        
+                        <div className={selected == i ? 'content show' : 'content'}>
+                            {datatreatment.map((itemtreatment, j) => (
+                                <div key={j} className='Treatment'>
+                                    <div className='treatment'>{itemtreatment.treatment}</div>
+                                    <div className='docter'>{itemtreatment.docter}</div>
+                                    <div className='price'>{itemtreatment.plice}</div>
+                                </div>
+                            ))}
+                            <div className='totalValue'>
+                                <div className='total'>Total value</div>
+                                <div className='value'>1,500</div>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                ))}
-            
+                </div>
+            ))}
         </>
     )
 }

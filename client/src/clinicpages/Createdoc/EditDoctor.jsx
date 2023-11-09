@@ -47,7 +47,7 @@ function EditDoctor() {
             </div>
             <div className="test2">
               <text className="normalText">Treatment and service :</text>
-              <input type="text" className="treatment"></input>
+              <input type="text" className="treatmentt"></input>
             </div>
           </div>
           <div className="part2">

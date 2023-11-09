@@ -1,24 +1,18 @@
 .boxAccordion{
-    display: flex;
-    flex-direction: column-reverse;
     font-weight: bold;
-    width: 555px;
     font-size: 15px;
-    margin-bottom: 10px;
-    
+    cursor: pointer;
 }
 
 .boxAccordion .row{
     border: solid 1.5px #22668D;
     background: #ffffff;
-    width: 550px;
     border-radius: 20px;
     margin-top: 5px;
     display: flex;
     color: #22668D;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin: 8px;
     align-items: center;
     z-index: 99;
     
@@ -26,48 +20,34 @@
 
 
 .boxAccordion .row .date{
-    position: relative;
-    display: inline-block;
     margin-left: 20px;
     width: 130px;
 }
 .boxAccordion .row .time{
-    position: relative;
-    display: inline-block;
     margin-left: 0;
     width: 100px;
 }
 
 .boxAccordion .row .place{
-    position: relative;
-    display: inline-block;
     margin-left: 0;
     width: 160px;
 }
 
 .boxAccordion .row .status{
-    position: relative;
-    display: inline-block;
-    margin-left: 0;
+    margin-left: 10px;
     width: 30px;
 }
 
 .boxAccordion .row .according{
-    position: relative;
-    top: 6px;
-    right: 5px;
     height: 25px;
     margin-left: 55px;
-    cursor: pointer;
 }
 
 
 .boxAccordion .Treatment{
-    position: relative;
-    top: -7px;
     font-size: 12px;
     display: flex;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     font-weight: bold;
     color: #749BC2;
 }
@@ -94,42 +74,35 @@
 }
 
 .boxAccordion .totalValue{
+    margin-top: 10px;
     display: flex;
     font-size: 12px;
     color: #749BC2;
+    justify-content: space-around;
+    font-size: 100%;
 }
 
-.boxAccordion .totalValue .total{
-    position: relative;
-    display: inline-block;
-    margin-left: 20px;
-    width: 410px;    
+
+.boxAccordion .content {
+    overflow: hidden;
+    max-height: 0;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, padding 0.3s ease-in-out, margin 0.3s ease-in-out;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    transform-origin: top;
+    transform: scaleY(0);
 }
 
-.boxAccordion .totalValue .value{
-    position: relative;
-    display: inline-block;
-    margin-left: 0;
-}
-
-.boxAccordion .content{
-    overflow: hidden;/*ซ่อนเนื้อหา*/
-    max-height: 0;   
-    
-}
-
-.boxAccordion .content.show{
-    height: auto;
+.boxAccordion .content.show {
     max-height: 9999px;
-    transition: translateY(400px);
-    border-bottom: solid 1.5px #22668D;
-    border-left: solid 1.5px #22668D;
-    border-right: solid 1.5px #22668D;
-    margin-top: -9px;
-    margin-left: 8px;
-    margin-bottom: 5px;
-    width: 523px;
+    border: 1.5px solid #22668D;
     border-radius: 0 0 15px 15px;
-    padding-top: 30px;
-    padding-bottom: 5px;
-}  
+    padding: 4px;
+    margin: 0 10px;
+    transform: scaleY(1);
+    border-top: none;
+}
+
+

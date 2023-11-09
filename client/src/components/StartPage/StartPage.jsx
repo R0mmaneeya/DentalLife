@@ -1,23 +1,22 @@
 import "./StartPage.css";
 function StartPage() {
-  const description = `As well as investing in the latest dental equipment and restorative\n
-  materials, our approach to dental care is based on three core\n
-  pillars of dental attention: Health, Function and Aesthetics.\n
-  These areas overlap and each one affects your physical,\n
-  functional and emotional well-being.`;
   return (
     <div className="wholepage">
       <div className="page">
         <div className="title">
-          <t className="page-title-head">Ensuring top dental health now</t>
-          <t className="page-title-head">and into the future</t>
+          <p className="page-title-head">Ensuring top dental health now</p>
+          <p className="page-title-head">and into the future</p>
         </div>
         <div className="description">
-          <string className="description-text">{description}</string>
+          <p className="description-text">As well as investing in the latest dental equipment and restorative\n
+            materials, our approach to dental care is based on three core\n
+            pillars of dental attention: Health, Function and Aesthetics.\n
+            These areas overlap and each one affects your physical,\n
+            functional and emotional well-being.</p>
         </div>
         <div className="login">
-        <button className="login-btn">LOGIN</button>
-      </div>
+          <button className="login-btn">LOGIN</button>
+        </div>
       </div>
     </div>
   );
