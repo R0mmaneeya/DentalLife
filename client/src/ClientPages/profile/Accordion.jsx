@@ -12,10 +12,10 @@ function Accordion() {
         setSelected(i)
     }
     return (
-        <>
+        <div >
             {dataInAccordion.map((item, i) => (
-                <div className="boxAccordion">
-                    <div key={i}>
+                <div className="boxAccordion" key={i}>
+                    <div >
                         <div className='row' onClick={() => toggle(i)}>
                             <div className='date'>{item.date}</div>
                             <div className='time'>{item.time}</div>
@@ -39,7 +39,7 @@ function Accordion() {
                     </div>
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 
