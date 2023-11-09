@@ -1,9 +1,11 @@
 import "./StartPage.css";
+import { useNavigate } from 'react-router-dom';
 function StartPage() {
+  const navigate = useNavigate();
   return (
     <div className="wholepage">
-      <div className="page">
-        <div className="title">
+      <div className="homepage">
+        <div className="titlehomepage">
           <p className="page-title-head">Ensuring top dental health now</p>
           <p className="page-title-head">and into the future</p>
         </div>
@@ -15,7 +17,7 @@ function StartPage() {
             functional and emotional well-being.</p>
         </div>
         <div className="login">
-          <button className="login-btn">LOGIN</button>
+          <button className="login-btn" onClick={()=> navigate("/ClientLogin")}>LOGIN</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-.tabbar{
+.tabbarclinic{
     position: fixed;/*ตามติดตลอด*/
     height: 5rem;
     top: 0;
@@ -22,24 +22,20 @@
     margin-top: 0.5rem;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-    max-width: 300px;
-    margin-left: 200px;
-    margin-right: auto;
-    padding-top: 5px;
+.gridclinic{
+    display: flex;/*เลียงเป็นแถวห่างเท่ากัน3บ*/
+    align-items: center;
+    gap: 20px;
 }
 
-.grid button.profile {
+.gridclinic button.profile {
     min-width: max-content;/*ทำให้กริดขนาดเท่าตัวอักษรข้างใน*/
     background: #A0C49D;
     border-radius: 10px;
     color: #ffffff;
 }
 
-.grid button.appinment{
+.gridclinic button.appinment{
     min-width: max-content;
     background: #E1ECC8;
     border-radius: 10px;
@@ -47,11 +43,11 @@
     
 }
 
-.grid button.home{
+.gridclinic button.home{
     left: 30px;
 }
 
-.grid button{
+.gridclinic button{
     position: relative;
     display: flex;/*ทำให้อยู่ตรงกลางเส้นเดียวกัน*/
     align-items: center;
@@ -63,12 +59,12 @@
     color: #4682A9;
 }
 
-.grid button:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
+.gridclinic button:hover{/*ดักจับเหต์การเมื่อเอาเมาส์วาง*/
     transform: scale(0.98);/*ย่อเมื่อเมาส์วางดูรูปแบบจากtiktok*/   
 
 }
 
-.grid button:active {/*ดักจับเหต์การเมื่อกด*/
+.gridclinic button:active {/*ดักจับเหต์การเมื่อกด*/
     transform: scale(0.995);
   }
 

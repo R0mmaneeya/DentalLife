@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Monda', sans-serif;
+  text-decoration: none;
 }
 li{
   list-style: none;/*ทำให้จุดที่เกิดจากliหายไป*/

@@ -9,7 +9,6 @@
     position: absolute;
     width: 100% ;
     overflow: hidden;
-
 }
 
 .LoginLogin_main #boxin{
@@ -71,7 +70,7 @@
     background-color: #D9D9D9;
 }
 
-.LoginLogin_main #input{
+.LoginLogin_main #email ,#password{
     position: absolute;
     border-radius: 2rem;
     border: 0.08rem solid black;
@@ -80,19 +79,23 @@
     left: 2.5rem;
 }
 
-.LoginLogin_main #check{
-    position: absolute;
-    margin-left: 3.5rem;
-    accent-color: #35A29F;/*เปลี่ยนสีใยช่องเช็ค*/
+.check-remember{
+    display: flex;
+    accent-color: #35A29F;
     cursor: pointer;
-}
+    padding: auto;
+    gap: 10px;
+    margin-left: 10%;
+    color: #769FCD;
+    align-items: center;
+} 
 
 .LoginLogin_main #submit{
     font-size: 2rem;
     font-weight: 400;
     border-radius: 1rem;
     padding: 0.5rem 3rem;
-    display: flex;/*30-32ทำให้อยู่ตรงกลาง*/
+    display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
@@ -103,8 +106,10 @@
 
 .LoginLogin_main .row{
     display: flex;
-    justify-content: space-around;
-    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    color: #769FCD;
 }
 
 @media(max-width:768px){
@@ -140,13 +145,7 @@
     height: 1rem;
     margin-top: 1.5rem;
 }
-/*img*/
 
-
-/*font*/
-.LoginLogin_main .h1{
-    color: #FFFFFF;
-}
 
 .LoginLogin_main h1{
     color: #769FCD;
@@ -161,7 +160,7 @@
     margin-left: 3.5rem;
     margin-top: 2.5rem;
     color: #769FCD;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
@@ -169,7 +168,7 @@
     position: absolute;
     left: 5rem;
     color: #769FCD;
-    font-size: 0.4rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 

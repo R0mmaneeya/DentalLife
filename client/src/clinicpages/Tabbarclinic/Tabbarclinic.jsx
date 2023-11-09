@@ -12,9 +12,9 @@ function Tabbarclinic() {
   return (
     <>
       {modal && <SDmodal setOpenClinicModal= {setModal}/>}
-      <div className="tabbar">
+      <div className="tabbarclinic">
         <img className="logo" src="images-tabbar/logo.jpg" />
-        <div className='grid'>
+        <div className='gridclinic'>
           <button className='home' style={{ cursor: 'pointer' }} onClick={()=>{
             navigate("/")
           }}>
