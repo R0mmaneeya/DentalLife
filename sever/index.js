@@ -25,8 +25,24 @@ db.connect(function (err) {
 app.post("/register", jsonParser, function (req, res, next) {
   bcrypt.hash(req.body.Password, saltRounds, function (err, hash) {
     db.execute(
-      "INSERT INTO client(uuid,Email,Password,fname,lname) VALUES(?,?,?,?,?)",
-      [req.body.id, req.body.Email, hash, req.body.fname, req.body.lname],
+      "INSERT INTO client(uuid,Email,Password,fname,lname,Tel,IDline,Religion,Nationality,Occupation,DOB,Weight,Height,Address,allergy) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      [
+        req.body.id,
+        req.body.Email,
+        hash,
+        req.body.fname,
+        req.body.lname,
+        req.body.Tel,
+        req.body.IDline,
+        req.body.Religion,
+        req.body.Nationality,
+        req.body.Occupation,
+        req.body.DOB,
+        req.body.Weight,
+        req.body.Height,
+        req.body.Address,
+        req.body.allergy,
+      ],
       function (err, results, fields) {
         if (err) {
           res.json({ status: "error", message: err });
@@ -56,11 +72,11 @@ app.post("/login", jsonParser, function (req, res, next) {
         user[0].password,
         function (err, isLogin) {
           if (isLogin) {
-            email = user[0].email
+            email = user[0].email;
             var token = jwt.sign({ Email: email }, secret, {
               expiresIn: "1h",
             });
-            res.json({ status: "ok", message: "login success", token ,email});
+            res.json({ status: "ok", message: "login success", token, email });
           } else {
             res.json({ status: "error", message: "login failed" });
           }
@@ -76,7 +92,7 @@ app.post("/authen", jsonParser, function (req, res, next) {
     var decoded = jwt.verify(token, secret);
     res.json({ status: "ok", decoded });
   } catch (err) {
-    res.status(400).json({ status: 'error', message: 'Authentication failed' });
+    res.status(400).json({ status: "error", message: "Authentication failed" });
   }
 });
 app.listen("3001", () => {
