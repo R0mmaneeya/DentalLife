@@ -1,12 +1,38 @@
-// import "./Login_main_clinic.css";
+import Axios from "axios";
+import { useState } from "react";
+import { authentication } from "../../../service/authorize";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login_main.css";
+import Tabbar from "../../ClientPages/Home/Tabbar";
+
 function Login_main_clinic({ setstateclinic }) {
 
   const navigate = useNavigate();
-  var { email, passwold } = [];
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    Axios.post("http://localhost:3001/login", {
+      Email: email,
+      Password: password,
+    })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.status === "ok") {
+          authentication(response, navigate("/"))
+        } else {
+          alert("Login failed. " + response.data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error during login:", error);
+      });
+  };
   return (
     <div className="LoginLogin_main">
+      <Tabbar />
       <div className="box">
         {/* relative กำหนดกรอบคงที่ */}
         <img className="bg" src="images-login\bg.svg" />
@@ -23,29 +49,46 @@ function Login_main_clinic({ setstateclinic }) {
           <div id="boxClinic" style={{ backgroundColor: "#769FCD" }}>Clinic</div>
           {/* กรอกข้อมูล */}
           {/* ใส่formแยกทีหลัง */}
-          <br />
-          <h2>Enter Email</h2>
-          <input id="email" type="email" name="email" autoComplete="email" />
-          {email}
-          <br />
-          <h2>Enter Password</h2>
-          <input id="password" type="password" name="password" />
-          {passwold}
-          <br />
-          <br />
-          <div className="check-remember">
-            <input type="checkbox" name="my_checkbox" value="yes" />
-            REMEMBER ME
-          </div>
-          <br />
-          <center>
-            <button id="submit" type="submit" onClick={() => {
-                navigate('/');
-                setstateclinic(true);
-              }}>
-              Log in
-            </button>
-          </center>
+          <form onSubmit={handleLogin}>
+            <br />
+            <h2>Enter Email</h2>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <br />
+            <h2>Enter Password</h2>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <br />
+            <br />
+            <div className="check-remember">
+              <input
+                type="checkbox"
+                name="rememberMe"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+              />
+              REMEMBER ME
+            </div>
+            <br />
+            <center>
+              <button id="submit" type="submit" onClick={handleLogin}>
+                Log in
+              </button>
+            </center>
+          </form>
         </div>
       </div>
     </div>

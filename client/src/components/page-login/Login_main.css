@@ -82,7 +82,6 @@
 .check-remember{
     display: flex;
     accent-color: #35A29F;
-    cursor: pointer;
     padding: auto;
     gap: 10px;
     margin-left: 10%;

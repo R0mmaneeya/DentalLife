@@ -24,5 +24,5 @@ const clinicSlice = createSlice(
 )
 console.log(clinicSlice)
 
-export const {} = clinicSlice.actions
+export const {Add} = clinicSlice.actions
 export default clinicSlice.reducer

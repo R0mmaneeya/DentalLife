@@ -199,32 +199,3 @@
 }
 
 
-
-.hCalenn h5{
-    font-size: 20px;
-    color: #A0C49D;
-}
-
-.time-ALL,.calendar-dayy{
-    font-size: 80%;
-    background-color: #F6FBF4;
-}
-.calendar-dayy:hover{
-    font-size: 95%;
-    background-color: #D0E7D2;
-}
-.calendar-dayy.selectedd{
-    font-size: 95%;
-    background-color: #A0C49D;
-}
-.time-ALL:hover{
-    font-size: 80%;
-    background-color: #D0E7D2;
-}
-.time-ALL.selectedd{
-    font-size: 80%;
-    background-color: #A0C49D;
-}
-.inGridd button{
-    background-color: #A0C49D;
-} 

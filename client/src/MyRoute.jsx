@@ -10,11 +10,12 @@ import Tabbarclinic from "./clinicpages/Tabbarclinic/Tabbarclinic";
 import PageserchDoc from "./clinicpages/Page-search-docter/Page-search-docter.jsx";
 import EditDoctor from "./clinicpages/Createdoc/EditDoctor.jsx";
 import Pagesearchpa from "./clinicpages/Page-search-patient/Page-search-patient.jsx";
+import { getUser } from "../service/authorize.jsx";
 const MyRoute = () => {
     const [clinicState, setClinicState] = useState(false);
     return (
         <Router>
-            {clinicState ? <Tabbarclinic /> : <Tabbar />}
+            
             <Routes>
                 <Route path="/" element={<StartPage />} />
                 <Route path="/Profile" element={<Profile />} />
