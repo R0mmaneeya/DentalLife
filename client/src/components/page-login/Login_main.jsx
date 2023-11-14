@@ -4,21 +4,25 @@ import Axios from "axios";
 import { useState } from "react";
 import { authentication } from "../../../service/authorize";
 import Tabbar from "../../ClientPages/Home/Tabbar";
+import {addClient} from "../../store/slices/ClientSlice";
+import { useDispatch } from "react-redux";
 function Login_main() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3001/login", {
+    Axios.post("http://localhost:3001/auth/login", {
       Email: email,
       Password: password,
     })
       .then((response) => {
         console.log(response.data);
         if (response.data.status === "ok") {
-          authentication(response, navigate("/"))
+          dispatch(addClient(response.data.user))
+          authentication(response, ()=>navigate("/"))
         } else {
           alert("Login failed. " + response.data.message);
         }
@@ -27,7 +31,6 @@ function Login_main() {
         console.error("Error during login:", error);
       });
   };
-
 
 
   return (

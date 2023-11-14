@@ -4,6 +4,7 @@ import Null from './Null.jsx';
 import Buttonchange from './Buttonchange.jsx';
 import Boxdentis from './Boxdentis'
 import dataDentises from './dataDentuses';
+import Tabbarclinic from '../Tabbarclinic/Tabbarclinic.jsx';
 function PageserchDoc() {
   const [searchText, setSearchText] = useState('');
 
@@ -18,6 +19,7 @@ function PageserchDoc() {
 
   return (
     <div className='PageserchDoc'>
+      <Tabbarclinic/>
       <Buttonchange />
       <center>
         <div className='app-search'>

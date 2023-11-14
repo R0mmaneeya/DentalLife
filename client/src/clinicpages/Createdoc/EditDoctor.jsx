@@ -1,12 +1,40 @@
 import "./EditDoctor.css";
 import Profile from "./component/profile.svg";
-import { useState } from "react";
+import Tabbarclinic from "../Tabbarclinic/Tabbarclinic";
+import React, { useState } from 'react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function EditDoctor() {
-  function handleImageClick() {
-  console.log("Image clicked");
-}
+  const navigate = useNavigate();
+  
+  
+  const [formData, setFormData] = useState({
+    ProfessionalLicenseNumber: '',
+    Firstname: '',
+    Lastname: '',
+    Tel: '',
+    ID_line: '',
+    DentistCraft: '',
+    ID_card: '',
+    Religion: '',
+    Nationality: '',
+    DateOfBirth: '',
+  });
+
+  //คลิกconfirm 
+  const handleConfirm = async()=>{
+    try {
+      const response = await axios.post("http://localhost:3001/api/scheduling",formData);
+      console.log(response.data);
+      navigate("/SearchDoc");
+  } catch (error) {
+      console.error("Error toggling dropdown:", error);
+  }
+};
+
   return (
     <>
+      <Tabbarclinic/>
       <div className="wpage">
         <div className="topForm">
           {/* topform */}
@@ -24,61 +52,61 @@ function EditDoctor() {
             </div>
             {/* specialized */}
             <div className="expertise">
-              <text className="normalText">Specialized expertise :</text>
+              <p className="normalText">Specialized expertise :</p>
               <input type="text"></input>
             </div>
             {/* PLAB */}
             <div className="Plab">
-              <text className="normalText">PLAB :</text>
+              <p className="normalText">PLAB :</p>
               <input type="text"></input>
             </div>
           </div>
           <div className="img-7">
-          <img id="img" src={Profile} alt="profile" onClick={handleImageClick}/>
+          <img id="img" src={Profile} alt="profile" />
           </div>
         </div>
         <div className="bottomForm">
           <div className="part1">
             <div className="test">
-              <text className="normalText">Centers and Clinics :</text>
+              <p className="normalText">Centers and Clinics :</p>
               <input type="text" className="centers"></input>
-              <text className="normalText">Language:</text>
+              <p className="normalText">Language:</p>
               <input type="text" className="language"></input>
             </div>
             <div className="test2">
-              <text className="normalText">Treatment and service :</text>
+              <p className="normalText">Treatment and service :</p>
               <input type="text" className="treatmentt"></input>
             </div>
           </div>
           <div className="part2">
             <div className="part2-1">
-              <text className="normalText">Graduated education :</text>
+              <p className="normalText">Graduated education :</p>
             </div>
             <div className="theBox">
               <div className="year">
-                <text className="normalText">Year :</text>
+                <p className="normalText">Year :</p>
                 <input type="text" className="year-input"></input>
                 <input type="text" className="year-input"></input>
                 <input type="text" className="year-input"></input>
               </div>
               <div className="S-expertise">
-                <text className="normalText">Specialized expertise :</text>
+                <p className="normalText">Specialized expertise :</p>
                 <input type="text" className="spec-input"></input>
                 <input type="text" className="spec-input"></input>
                 <input type="text" className="spec-input"></input>
               </div>
               <div className="S-expertise">
-                <text className="normalText">University :</text>
+                <p className="normalText">University :</p>
                 <input type="text" className="spec-input"></input>
                 <input type="text" className="spec-input"></input>
                 <input type="text" className="spec-input"></input>
               </div>
             </div>
             <div className="part3">
-              <text className="normalText">Work experience :</text>
+              <p className="normalText">Work experience :</p>
               <div className="theBox-1">
                 <div className="duration">
-                  <text className="normalText">Duration :</text>
+                  <p className="normalText">Duration :</p>
                   <input type="text" className="du-input"></input>
                   <input type="text" className="du-input"></input>
                   <input type="text" className="du-input"></input>
@@ -86,7 +114,7 @@ function EditDoctor() {
                   <input type="text" className="du-input"></input>
                 </div>
                 <div className="S-expertise">
-                  <text className="normalText">Specialized expertise :</text>
+                  <p className="normalText">Specialized expertise :</p>
                   <input type="text" className="spec-input"></input>
                   <input type="text" className="spec-input"></input>
                   <input type="text" className="spec-input"></input>
@@ -102,15 +130,15 @@ function EditDoctor() {
             <div className="part4">
               <div className="theBox-1">
                 <div className="gender">
-                  <text className="normalText">Gender :</text>
+                  <p className="normalText">Gender :</p>
                   <input type="text" className="du-input"></input>
                 </div>
                 <div className="tel">
-                  <text className="normalText">Tel :</text>
+                  <p className="normalText">Tel :</p>
                   <input type="number" className="tel-input"></input>
                 </div>
                 <div className="tel">
-                  <text className="normalText">ID Line :</text>
+                  <p className="normalText">ID Line :</p>
                   <input type="text" className="tel-input"></input>
                 </div>
               </div>

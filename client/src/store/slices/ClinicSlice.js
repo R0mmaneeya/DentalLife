@@ -1,14 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,current } from "@reduxjs/toolkit";
+
 
 //initial Data clinic
 const initialState={
-    id:[],
-    name:["slfjls", "skdjfklj","dsifjdskj"],
-    branchOfClinic:[],
-    imageClinic:[],
-    idDentist:[],
-    email:[],
-    password:[],
+    clinic:[]
 }
 
 const clinicSlice = createSlice(
@@ -16,13 +11,14 @@ const clinicSlice = createSlice(
         name:"Clinic",
         initialState,
         reducers:{
-            Add:(state,action)=>{
-                state.name = action.payload
+          setClinic:(state,action)=>{
+                state.clinic = action.payload;
+                console.log(current(state))
             }
         }
     }
 )
-console.log(clinicSlice)
 
-export const {Add} = clinicSlice.actions
+
+export const {setClinic} = clinicSlice.actions
 export default clinicSlice.reducer

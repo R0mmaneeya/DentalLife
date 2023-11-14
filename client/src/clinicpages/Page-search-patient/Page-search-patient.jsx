@@ -4,6 +4,7 @@ import Boxpatient from './Boxpatient';
 import dataPatients from './dataPatients';
 import Null from './Null.jsx';
 import Buttonchange from './Buttonchange';
+import Tabbarclinic from '../Tabbarclinic/Tabbarclinic.jsx';
 
 
 
@@ -20,6 +21,7 @@ function Pagesearchpa() {
 
   return (
     <div className='Pagesearchpa'>
+      <Tabbarclinic/>
       <Buttonchange/>
     
       <center>

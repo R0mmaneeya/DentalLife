@@ -2,7 +2,8 @@ export const authentication = (response, next) => {
     if (typeof window !== "undefined") {
         // เก็บข้อมูลลง sessionStorage
         sessionStorage.setItem("token", JSON.stringify(response.data.token));
-        sessionStorage.setItem("email", JSON.stringify(response.data.email));
+        sessionStorage.setItem("email", JSON.stringify(response.data.user[0].email));
+        sessionStorage.setItem("uuid",JSON.stringify(response.data.user[0].uuid))
     }
     next();
 };
@@ -38,3 +39,13 @@ export const logout = (next) => {
     }
     next();
 };
+
+export const getuuid = ()=>{
+    if (typeof window !== "undefined") {
+        if (sessionStorage.getItem("uuid")) {
+            return JSON.parse(sessionStorage.getItem("uuid"));
+        } else {
+            return false;
+        }
+    }
+}

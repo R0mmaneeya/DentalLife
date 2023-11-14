@@ -24,13 +24,13 @@ function Tabbar() {
               Home
             </Link>
           </li>
-          <li className="nav-item tab-link">
+          {getToken()&&<li className="nav-item tab-link">
             <Link to="/Profile" style={{ cursor: 'pointer' }}
               className="tab-link" >
               <img id="img" src="images-tabbar\profile.svg" alt="" />
               PROFILE
             </Link>
-          </li>
+          </li>}
           {getToken() && <li className="nav-item" onClick={() => {
             return setModalstate(true)
           }}>

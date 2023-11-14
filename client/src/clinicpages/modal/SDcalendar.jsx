@@ -18,8 +18,6 @@ function SDcalendar({Time}) {
     const handleDateClick = (day) => {
         setSelectedDate(day);
         setSelectedTime(null);
-        // console.log(day);
-        // console.log(selectedTime);
     };
     const handleTimeClick = (time) => {
         setSelectedTime(time);

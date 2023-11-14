@@ -4,24 +4,25 @@ import { authentication } from "../../../service/authorize";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login_main.css";
 import Tabbar from "../../ClientPages/Home/Tabbar";
-
-function Login_main_clinic({ setstateclinic }) {
-
+import { useDispatch } from "react-redux";
+import { setClinic } from "../../store/slices/ClinicSlice";
+function Login_main_clinic() {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3001/login", {
+    Axios.post("http://localhost:3001/auth/loginclinic", {
       Email: email,
       Password: password,
     })
       .then((response) => {
         console.log(response.data);
         if (response.data.status === "ok") {
-          authentication(response, navigate("/"))
+          dispatch(setClinic(response.data.user))
+          authentication(response,()=> navigate("/homeClinic"))
         } else {
           alert("Login failed. " + response.data.message);
         }

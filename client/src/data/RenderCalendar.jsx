@@ -5,7 +5,7 @@ export const renderCalendar = (currentMonth) => {
     const daysInMonth = moment(currentMonth).daysInMonth();
     const firstDayOfMonth = moment(currentMonth).date(0);
     let calendar = {
-        id:[], //database get value id
+        id:[], 
         date:[],
         time:[],
         emptydate:[],

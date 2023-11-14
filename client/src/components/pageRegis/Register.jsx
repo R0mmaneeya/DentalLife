@@ -24,15 +24,15 @@ export default function Register() {
     IDline: null,
     Email: "",
     Password: "",
-    id: "",
     Religion: null,
     Nationality: null,
     DOB: null,
     Occupation: null,
-    Weight: 0,
-    Height: 0,
+    Weight: null,
+    Height: null,
     Address: null,
     allergy: null,
+    idcard:null
   });
 
   const handleChange = (e) => {
@@ -45,7 +45,6 @@ export default function Register() {
     try {
       const response = await axios.post("http://localhost:3001/register", formData);
       console.log(response.data);
-      // Redirect or handle success as needed
       navigate("/ClientLogin");
     } catch (error) {
       console.error("Registration failed:", error);
@@ -117,13 +116,12 @@ export default function Register() {
                 {passwordShown ? hideIcon : showIcon}
               </i>
             </div>
-
+            
             {/* ID card */}
             <div className="name-text">
               <label>ID Card:</label>
               <input type="number" name="id" value={formData.id} onChange={handleChange} required/>
             </div>
-
             <button className="signUpbtn" type="submit">
               Sign up
             </button>
@@ -140,7 +138,6 @@ export default function Register() {
                 <input type="text" name="Nationality" value={formData.Nationality} onChange={handleChange} />
               </div>
             </div>
-
             {/* dob race */}
             <div className="column">
               <div className="column-name-text">

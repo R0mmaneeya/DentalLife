@@ -2,13 +2,17 @@ import './Tabbarclinic.css';
 import SDmodal from '../modal/SDmodal';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../../../service/authorize';
 function Tabbarclinic() {
   const [modal, setModal] = useState(false);
   const navigate = useNavigate();
   const openModal = () => {
     setModal(true);
   };
-
+  const handleLogout = () => {
+    logout(() => navigate("/"));
+    window.location.reload();
+  };
   return (
     <>
       {modal && <SDmodal setOpenClinicModal= {setModal}/>}
@@ -16,7 +20,7 @@ function Tabbarclinic() {
         <img className="logo" src="images-tabbar/logo.jpg" />
         <div className='gridclinic'>
           <button className='home' style={{ cursor: 'pointer' }} onClick={()=>{
-            navigate("/")
+            navigate("/homeClinic")
           }}>
             <img className='imgtab' src='images-tabbar\home.svg' />HOME
           </button>
@@ -31,6 +35,9 @@ function Tabbarclinic() {
           <button className='appinment' style={{ cursor: 'pointer' }} onClick={openModal}>
             <img className='imgtab' src='images-tabbar\calendar.png' />BOOK APPOINTMENT
           </button>
+          <button className="nav-item" onClick={handleLogout}>
+              log out
+            </button>
         </div>
       </div>
     </>
