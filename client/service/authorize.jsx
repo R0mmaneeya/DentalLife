@@ -3,7 +3,11 @@ export const authentication = (response, next) => {
         // เก็บข้อมูลลง sessionStorage
         sessionStorage.setItem("token", JSON.stringify(response.data.token));
         sessionStorage.setItem("email", JSON.stringify(response.data.user[0].email));
-        sessionStorage.setItem("uuid",JSON.stringify(response.data.user[0].uuid))
+        if(response.data.user[0].uuid ){
+        sessionStorage.setItem("uuid",JSON.stringify(response.data.user[0].uuid))}
+        else{
+            sessionStorage.setItem("uuid",JSON.stringify(response.data.user[0].ID_Clinic))
+        }
     }
     next();
 };
@@ -36,6 +40,7 @@ export const logout = (next) => {
         // remove sessionStorage
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("email");
+        sessionStorage.removeItem("uuid");
     }
     next();
 };

@@ -1,10 +1,10 @@
 import { createSlice , current} from '@reduxjs/toolkit'
-
+import moment from 'moment'
 const initialState = {
     selecClinic:null,
     selecTreat:null,
     selecDoc:null,
-    date:null,
+    date:moment().format('YYYY-MM-DD'),
     status:null,
     id:null,
     time:null,

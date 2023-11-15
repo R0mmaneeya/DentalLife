@@ -1,62 +1,56 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { getuuid } from "../../../service/authorize";
+function BodySD({treat,doc}) {
 
-function BodySD() {
+    //TREATMENT DATA
     const [selectedTreatment, setselectedTreatment] = useState(null);
     const [treatmentActive, settreatmentActive] = useState(false);
-    const Treatment = [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-    ];
-    const toggleDropdownS1 = () => {
-        settreatmentActive(!treatmentActive);
+    const [Treatment, setTreatment] = useState([]);
+    const toggleDropdownS1 = async() => {
+        try {
+            const response = await axios.get("http://localhost:3001/api/craft");
+            setTreatment(response.data);
+            console.log(Treatment)
+            settreatmentActive(!treatmentActive);
+            settreatmentActive(!treatmentActive);
+        } catch (error) {
+            console.error("Error toggling dropdown:", error);
+        }
     };
     const handleOptionClickS1 = (Treatment) => {
         setselectedTreatment(Treatment);
         settreatmentActive(false);
+        treat(Treatment);
     };
 
 
-
+    //DOCTOR DATA
     const [SelectedDoctor, setSelectedDoctor] = useState(null);
     const [doctorActive, setdoctorActive] = useState(false);
-
-    const doctor = [
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-        "Option 1",
-        "Option 2",
-        "Option 3",
-    ];
-
-    
-    const DoctortoggleDropdown = () => {
-        setdoctorActive(!doctorActive);
+    const [doctor, setdoc] = useState([])
+    const clinicidd = getuuid();
+    const DoctortoggleDropdown = async() => {
+        console.log(clinicidd)
+        try {
+            const response = await axios.post("http://localhost:3001/api/dataDent",{clinicID:clinicidd});// iddoc 
+            setdoctorActive(!doctorActive);
+            setdoc(response.data)
+            setdoctorActive(!doctorActive);
+        } catch (error) {
+            console.error("Error toggling dropdown:", error);
+        }
     };
-    
-    const DoctorHandleOption = (doctor) => {
+    const DoctorHandleOption = (doctor,id) => {
         setSelectedDoctor(doctor);
         setdoctorActive(false);
+        doc(id);
     };
+
+
+
     return (
         <div className="body">
-
 
             {/* Treatment */}
             <h5 style={{ lineHeight: "2", textAlign: "left", color: "#A0C49D" }}>
@@ -74,10 +68,10 @@ function BodySD() {
                     {Treatment.map((Treatment, index) => (
                         <li
                             key={index}
-                            onClick={() => handleOptionClickS1(Treatment)}
-                            className={selectedTreatment === Treatment ? "selected" : ""}
+                            onClick={() => handleOptionClickS1(Treatment.nameOfcraft)}
+                            className={selectedTreatment === Treatment.nameOfcraft ? "selected" : ""}
                         >
-                            {Treatment}
+                            {Treatment.nameOfcraft}
                         </li>
                     ))}
                 </ul>
@@ -102,10 +96,10 @@ function BodySD() {
                     {doctor.map((doctor, index) => (
                         <li
                             key={index}
-                            onClick={() => DoctorHandleOption(doctor)}
-                            className={SelectedDoctor === doctor ? "selected" : ""}
+                            onClick={() => DoctorHandleOption(doctor.Firstname+" "+doctor.Lastname,doctor.ProfessionalLicenseNumber)}
+                            className={SelectedDoctor === doctor.Firstname+" "+doctor.Lastname ? "selected" : ""}
                         >
-                            {doctor}
+                            {doctor.Firstname+" "+doctor.Lastname}
                         </li>
                     ))}
                 </ul>

@@ -19,5 +19,5 @@ app.use("/api",myroutes);
 
 
 app.listen(process.env.MY_PORT, () => {
-  console.log("sever is running on port 3001");
+  console.log("sever is running on port 3001")
 });

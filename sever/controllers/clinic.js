@@ -30,12 +30,12 @@ module.exports.scheduling = function (req, res, next) {
       req.body.date,
       req.body.time,
     ],
-    (err, results) => {
+    function (err, results, fields) {
       if (err) {
-        console.log(err);
-      } else {
-        res.send(results);
+        res.json({ status: "error", message: err });
+        return;
       }
+      res.json({ status: "Scheduling Complete" });
     }
   );
 };
@@ -55,12 +55,12 @@ exports.regisDent = function (req, res, next) {
       req.body.nation,
       req.body.DOB,
     ],
-    (err, results) => {
+    function (err, results, fields) {
       if (err) {
-        console.log(err);
-      } else {
-        res.send(results);
+        res.json({ status: "error", message: err });
+        return;
       }
+      res.json({ status: "register Complete" });
     }
   );
 };
@@ -80,6 +80,20 @@ exports.edit = function (req, res, next) {
       req.body.DOB,
       req.body.profesID,
     ],
+    function (err, results, fields) {
+      if (err) {
+        res.json({ status: "error", message: err });
+        return;
+      }
+      res.json({ status: "UPDATE Complete" });
+    }
+  );
+};
+
+exports.dataDent = (req, res, next) => {
+  db.execute(
+    "SELECT * FROM dentist WHERE clinicID = ?",
+    [req.body.clinicID],
     (err, results) => {
       if (err) {
         console.log(err);
@@ -90,16 +104,16 @@ exports.edit = function (req, res, next) {
   );
 };
 
-exports.dataDent = () => {
-  db.query("SELECT * FROM dentist", (err, results) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(results);
+exports.dataSheduling = (req, res, next) => {
+  db.execute(
+    "SELECT TimeOfScheduling FROM scheduling WHERE DateOfScheduling = ? and IDClinicForScheduling =?",
+    [req.body.date, req.body.id],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(results);
+      }
     }
-  });
+  );
 };
-
-exports.dataSheduling = ()=>{
-  
-}

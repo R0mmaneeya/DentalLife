@@ -36,7 +36,7 @@ function Tabbar() {
           }}>
             <p style={{ cursor: 'pointer' }} id="round">
               <img id="img" src="images-tabbar\calendar.png" />
-              <span className="h1" > BOOK APPOINMANT</span>
+              <span className="h1" > BOOK APPOINTMENT</span>
             </p>
           </li>}
           {getToken() ?

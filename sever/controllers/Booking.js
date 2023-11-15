@@ -35,3 +35,17 @@ module.exports.databooking = function (req, res, next) {
     }
   );
 };
+
+exports.timeBook = (req, res, next)=>{
+  db.execute(
+    "SELECT time,status,uuid FROM booking WHERE date = ?",
+    [req.body.date],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(results);
+      }
+    }
+  )
+}
