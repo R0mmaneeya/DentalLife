@@ -61,7 +61,7 @@ function BodySD({treat,doc}) {
                 onClick={toggleDropdownS1}
             >
                 <div className="select">
-                    {selectedTreatment || "Select Clinic"}
+                    {selectedTreatment || "Select Treatment"}
                     <i className="icon">▼</i>
                 </div>
                 <ul className={`dropdown-menu `}>

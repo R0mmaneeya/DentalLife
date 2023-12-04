@@ -43,7 +43,7 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/register", formData);
+      const response = await axios.post("http://localhost:3001/auth/register", formData);
       console.log(response.data);
       navigate("/ClientLogin");
     } catch (error) {

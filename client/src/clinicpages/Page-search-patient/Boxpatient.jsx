@@ -1,9 +1,17 @@
 import "./Boxpatient.css";
-
+import ApModal from "../../ClientPages/modal/ApModal"
+import { useState } from "react";
 function BoxPatient(props) {
   const { dataPatient } = props;
+  const [Modalstate, setModalstate] = useState(false);
+  const [clientId,setID] = useState(null);
+  const handleEditButtonClick = (id) => {
+    setID(id);
+    setModalstate(true);
+  };
   return (
     <div className="BoxPatient">
+      {Modalstate && <ApModal setOpenModal={setModalstate} id={clientId} />}
       <div className="box">
         <img className="imgpatient" src={dataPatient.imgpatient} />
         <h5>
@@ -19,7 +27,7 @@ function BoxPatient(props) {
           </div>
           <div className="dataprice">price :{dataPatient.dataprice}</div>
         </h6>
-        <button className="edit" style={{ cursor: "pointer" }}>
+        <button className="edit" style={{ cursor: "pointer" }} onClick={() => handleEditButtonClick(123)}>
           <center>Edit Profile</center>
         </button>{" "}
         {/*ใส่ฟังชั่นทีหลัง*/}
